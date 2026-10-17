@@ -1,0 +1,7 @@
+test,expected,observed,reason,match
+Valid message,accept,accept,ok,True
+Modified update,reject,reject,bad_tag,True
+Invalid tag,reject,reject,bad_tag,True
+Unknown client,reject,reject,unknown_client,True
+Wrong key for claimed identity,reject,reject,bad_tag,True
+"Poisoned update, valid key",accept,accept,ok,True

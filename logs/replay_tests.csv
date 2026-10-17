@@ -1,0 +1,9 @@
+test,round_at_server,expected,observed,reason,match
+Fresh valid message,1,accept,accept,ok,True
+"Exact repeat, same round",1,reject,reject,replay_duplicate,True
+Modified update,1,reject,reject,bad_tag,True
+"Replay of accepted message, later round",2,reject,reject,stale_round,True
+Late message from an earlier round,2,reject,reject,stale_round,True
+Replay with round field changed to current,2,reject,reject,bad_tag,True
+Replay with message ID changed,2,reject,reject,bad_tag,True
+"Fresh valid message, round 2",2,accept,accept,ok,True
